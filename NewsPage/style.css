@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+}
+
+.img{
+    width: 100%;
+    border-radius: 25px;
+}
+
+.content{
+    padding: 15px;
+    margin: 5px;
+    text-align: justify;
+}
+
+.content:hover{
+    transition-duration: 500ms;
+    background-color: brown;
+    border-radius: 7px;
+}
+
+.body{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    justify-items: center;
+}
+
+footer{
+    text-align: center;
+}

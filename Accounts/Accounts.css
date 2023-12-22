@@ -1,0 +1,13 @@
+header{
+    text-align: center;
+    font: 28 bold;
+}
+
+div{
+    align-items: center;
+}
+
+form{
+    justify-content: space-evenly;
+    max-width: 300px;
+}
