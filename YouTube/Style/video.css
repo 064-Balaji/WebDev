@@ -1,0 +1,37 @@
+.home-page{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 10px;
+	row-gap: 30px;
+}
+
+.video-preview{
+	
+}
+
+.video-thumbnail{
+	width: 100%;
+}
+
+.video-info{
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	column-gap: 5px;
+}
+
+.channel-logo{
+	width: 100%;
+	border-radius: 40px;
+}
+
+.info{
+	margin-left: 8px;
+}
+
+.channel-info, .views{
+	color: gray;
+}
+
+.channel-info{
+	margin-top: 15px;
+}

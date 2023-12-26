@@ -1,0 +1,99 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  height: 40px;
+}
+
+.left-section{
+  display: flex;
+}
+
+.hamburger-menu-icon{
+  width: 24px;
+  margin-right: 24px;
+  margin-left: 24px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.youtube-logo-icon{
+  height: 22px;
+  cursor: pointer;
+}
+
+
+.main-section{
+  display: flex;
+  flex: 1;
+  padding: 0 60px;
+  align-items: center;
+  max-width: 500px;
+}
+
+
+.main-section input{
+  flex: 1;
+  height: 33px;
+  width: 0;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 2px;
+  font-weight: 500;
+  color: rgb(170, 170, 170);
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.search-button{
+  padding: 0 16px;
+  height: 37px;
+  margin-left: -3px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.search-icon{
+  height: 28px;
+  vertical-align: middle;
+}
+
+.voice-search-button{
+  margin-left: 18px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.voice-search-icon{
+  height: 20px;
+  vertical-align: middle;
+}
+
+.right-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  margin-right: 24px;
+}
+
+.upload-icon{
+  height: 24px;
+}
+
+.youtube-apps-icon{
+  height: 24px;
+}
+
+.notifications-icon{
+  height: 24px;
+}
+
+.my-channel-icon{
+  height: 30px
+}

@@ -3,7 +3,7 @@ h1{
 }
 
 .img{
-    width: 100%;
+    width: 100%; /*max-content to wrap the whole image*/
     border-radius: 25px;
 }
 

@@ -1,13 +1,16 @@
 header{
     text-align: center;
-    font: 28 bold;
 }
 
 div{
-    align-items: center;
+    height: 470px;
+    text-align: center;
+    object-position: center;
 }
 
 form{
-    justify-content: space-evenly;
-    max-width: 300px;
+}
+
+img{
+    width: 20px;
 }
