@@ -4,6 +4,13 @@ header{
   align-items: center;
   padding: 8px 0;
   height: 40px;
+  border-bottom: 1px solid rgb(207, 207, 207);
+
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .left-section{
@@ -46,7 +53,7 @@ header{
 }
 
 .search-button{
-  padding: 0 16px;
+  padding: 0 18px;
   height: 37px;
   margin-left: -3px;
   border: 1px solid rgb(192, 192, 192);
@@ -56,12 +63,12 @@ header{
 }
 
 .search-icon{
-  height: 28px;
+  height: 24px;
   vertical-align: middle;
 }
 
 .voice-search-button{
-  margin-left: 18px;
+  margin-left: 10px;
   width: 40px;
   height: 40px;
   border: none;

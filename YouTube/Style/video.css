@@ -1,13 +1,26 @@
 .home-page{
+	margin-right: 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	column-gap: 10px;
 	row-gap: 30px;
+	padding-top: 68px;
+	padding-bottom: 1000px;
+	padding-left: 80px;
 }
 
-.video-preview{
-	
+@media (max-width: 700px){
+	.home-page{
+		grid-template-columns: 1fr 1fr;
+	}
 }
+
+@media (min-width: 1001px){
+	.home-page{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
 
 .video-thumbnail{
 	width: 100%;
