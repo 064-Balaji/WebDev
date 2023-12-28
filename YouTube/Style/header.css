@@ -97,8 +97,26 @@ header{
   height: 24px;
 }
 
+span{
+  position: relative;
+}
+
 .notifications-icon{
   height: 24px;
+}
+
+.notification-num{
+  position: absolute;
+  top: 0;
+  right: -4px;
+
+  line-height: 8px;
+
+  color: white;
+  background-color: rgb(167, 0, 0);
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 10px;
 }
 
 .my-channel-icon{

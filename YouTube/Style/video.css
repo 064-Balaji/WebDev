@@ -4,9 +4,9 @@
 	grid-template-columns: 1fr 1fr 1fr;
 	column-gap: 10px;
 	row-gap: 30px;
-	padding-top: 68px;
+	padding-top: 76px;
 	padding-bottom: 1000px;
-	padding-left: 80px;
+	padding-left: 100px;
 }
 
 @media (max-width: 700px){
@@ -28,13 +28,18 @@
 
 .video-info{
 	display: grid;
-	grid-template-columns: 40px 1fr;
+	grid-template-columns: 35px 1fr;
 	column-gap: 5px;
+	margin-top: 10px;
 }
 
 .channel-logo{
 	width: 100%;
 	border-radius: 40px;
+}
+
+.title{
+	font-weight: 500;
 }
 
 .info{
@@ -43,8 +48,26 @@
 
 .channel-info, .views{
 	color: gray;
+	font-size: 12px;
 }
 
 .channel-info{
 	margin-top: 15px;
+}
+
+.thumbnail{
+	position: relative;
+}
+
+.timeline{
+	position: absolute;
+	bottom: 12px;
+	right: 6px;
+	font-size: 12px;
+	font-weight: 500;
+
+	padding: 2px 6px;
+	border-radius: 3px;
+	background-color: black;
+	color: white;
 }
