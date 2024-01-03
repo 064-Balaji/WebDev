@@ -2,16 +2,21 @@
 
 const numbers = [1, 2, 3, 4, 1];
 
-const count = countOccurrences(numbers, 1);
+try{
+  const count = countOccurrences(5, 1);
+  console.log(count);
+}catch(e){
+  console.log(e.message);
+}
 
-console.log(count);
 
 function countOccurrences(array, searchElement){
   // for(let key of array)
   //   if(key === searchElement)
   //     count++;
 
-  
+  if(!Array.isArray(array))
+    throw new Error('Give an Array')
   return array.reduce((accumulator, current) => {
     const occured = (current === searchElement) ? 1:0
     return accumulator + occured;
