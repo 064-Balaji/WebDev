@@ -1,19 +1,35 @@
-import { Fragment } from "react";
+import { useState } from "react";
 
-const city = ["Chennai", "Madurai", "Thindukal", "Theni", "Kanchipuram"];
+interface Props {
+  items: string[];
+  heading: string;
+  onSelectItem: (item: string) => void;
+}
 
-function ListGroup() {
+function ListGroup({ items, heading, onSelectItem }: Props) {
+  let [selectedItem, setSelectedItem] = useState(-1);
   return (
-    <Fragment>
-      <h1>Vankam da Mapla from</h1>
+    <>
+      <h1>{heading}</h1>
       <ul className="list-group">
-        {city.map((item) => (
-          <li className="list-group-item" key={item}>
+        {items.map((item, index) => (
+          <li
+            className={
+              selectedItem === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            key={item}
+            onClick={() => {
+              setSelectedItem(index);
+              onSelectItem(item);
+            }}
+          >
             {item}
           </li>
         ))}
       </ul>
-    </Fragment>
+    </>
   );
 }
 
