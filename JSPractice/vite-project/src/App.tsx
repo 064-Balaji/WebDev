@@ -30,6 +30,9 @@ function App() {
       <Button buttonClick={() => setVisible(true)} color={"primary"}>
         This is my Button
       </Button>
+      <br />
+      <br />
+      <hr />
     </>
   );
 }
