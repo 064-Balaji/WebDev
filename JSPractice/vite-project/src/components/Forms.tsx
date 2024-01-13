@@ -1,17 +1,23 @@
 import { FieldValues, useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface FormData {
-  name: String;
-  age: number;
-  password: String;
-}
+const schema = z.object({
+  name: z.string().min(3, "name at least needs 3 charcters"),
+  age: z
+    .number({ invalid_type_error: "Age field is required" })
+    .min(12, "A ge must more than 12"),
+  password: z.string().min(5, "password needs 5 Characters"),
+});
+
+type FormData = z.infer<typeof schema>;
 
 const Forms = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   const onSubmit = (data: FieldValues) => console.log(data);
   return (
@@ -22,47 +28,37 @@ const Forms = () => {
             Name
           </label>
           <input
-            {...register("name", { required: true, minLength: 5 })}
+            {...register("name")}
             id="name"
             type="text"
             className="form-control"
           />
-          {errors.name?.type === "required" && (
-            <p className="text-danger">Name field is required</p>
-          )}
-          {errors.name?.type === "minLength" && (
-            <p className="text-danger">Atleast 5 characters required</p>
-          )}
+          {errors.name && <p className="text-danger">{errors.name.message}</p>}
         </div>
         <div className="m-3">
           <label htmlFor="age" className="form-label">
             Age
           </label>
           <input
-            {...register("age", { required: true })}
+            {...register("age", { valueAsNumber: true })}
             id="age"
             type="number"
             className="form-control"
           />
-          {errors.age?.type === "required" && (
-            <p className="text-danger">Age required</p>
-          )}
+          {errors.age && <p className="text-danger">{errors.age.message}</p>}
         </div>
         <div className="m-3">
           <label htmlFor="password" className="form-label">
             Password
           </label>
           <input
-            {...register("password", { required: true, minLength: 5 })}
+            {...register("password")}
             id="password"
             type="password"
             className="form-control"
           />
-          {errors.age?.type === "required" && (
-            <p className="text-danger">Password required</p>
-          )}
-          {errors.age?.type === "minLength" && (
-            <p className="text-danger">Password at least 5 characters</p>
+          {errors.password && (
+            <p className="text-danger">{errors.password?.message}</p>
           )}
         </div>
         <div className="m-3">
