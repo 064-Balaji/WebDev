@@ -2,6 +2,8 @@ import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 import Button from "./components/Button";
 import { useState } from "react";
+import ExpandleText from "./components/ExpandleText";
+import Forms from "./components/Forms";
 
 function App() {
   let city = ["Chennai", "Madurai", "Thindukal", "Theni", "Kanchipuram"];
@@ -33,7 +35,15 @@ function App() {
       <br />
       <br />
       <hr />
-      <></>
+      <ExpandleText maxChars={10}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eaque in,
+        libero accusantium optio labore dolorum recusandae voluptate saepe
+        doloribus qui voluptatem rerum suscipit vero beatae eius fugit vel ad.
+      </ExpandleText>
+      <br />
+      <br />
+      <hr />
+      <Forms />
     </>
   );
 }
