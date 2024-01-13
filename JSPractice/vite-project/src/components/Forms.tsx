@@ -1,55 +1,69 @@
-import { FormEvent, useRef } from "react";
+import { FieldValues, useForm } from "react-hook-form";
+
+interface FormData {
+  name: String;
+  age: number;
+  password: String;
+}
 
 const Forms = () => {
-  const person = {
-    name: "",
-    age: 0,
-    password: "",
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
 
-  const nameRef = useRef<HTMLInputElement>(null);
-  const ageRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
-
-  function formEvent(event: FormEvent) {
-    event.preventDefault();
-    nameRef.current !== null
-      ? (person.name = nameRef.current.value)
-      : console.log("Enter name");
-    passwordRef.current !== null
-      ? (person.password = passwordRef.current.value)
-      : console.log("Enter age");
-    ageRef.current !== null
-      ? (person.age = parseInt(ageRef.current.value))
-      : console.log("Enter the password");
-    console.log(person);
-  }
-
+  const onSubmit = (data: FieldValues) => console.log(data);
   return (
     <div>
-      <form onSubmit={formEvent}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="m-3">
           <label htmlFor="name" className="form-label">
             Name
           </label>
-          <input ref={nameRef} id="name" type="text" className="form-control" />
+          <input
+            {...register("name", { required: true, minLength: 5 })}
+            id="name"
+            type="text"
+            className="form-control"
+          />
+          {errors.name?.type === "required" && (
+            <p className="text-danger">Name field is required</p>
+          )}
+          {errors.name?.type === "minLength" && (
+            <p className="text-danger">Atleast 5 characters required</p>
+          )}
         </div>
         <div className="m-3">
           <label htmlFor="age" className="form-label">
             Age
           </label>
-          <input ref={ageRef} id="age" type="number" className="form-control" />
+          <input
+            {...register("age", { required: true })}
+            id="age"
+            type="number"
+            className="form-control"
+          />
+          {errors.age?.type === "required" && (
+            <p className="text-danger">Age required</p>
+          )}
         </div>
         <div className="m-3">
           <label htmlFor="password" className="form-label">
             Password
           </label>
           <input
-            ref={passwordRef}
+            {...register("password", { required: true, minLength: 5 })}
             id="password"
             type="password"
             className="form-control"
           />
+          {errors.age?.type === "required" && (
+            <p className="text-danger">Password required</p>
+          )}
+          {errors.age?.type === "minLength" && (
+            <p className="text-danger">Password at least 5 characters</p>
+          )}
         </div>
         <div className="m-3">
           <button className="btn btn-primary">Login</button>
