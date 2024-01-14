@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ExpenseList from "./ExpenseList";
 import ExpenseSort from "./ExpenseSort";
-// import { Form } from "react-hook-form";
+import ExpenseForm from "./ExpenseForm";
+import { FieldValues } from "react-hook-form";
 
 const Home = () => {
   const [list, setList] = useState([
@@ -21,9 +22,21 @@ const Home = () => {
     ? list.filter((e) => e.category === category)
     : list;
 
+  function onSubmit(data: FieldValues) {
+    setList([
+      ...list,
+      {
+        id: list.length,
+        description: data.Description,
+        amount: data.Amount,
+        category: data.Category,
+      },
+    ]);
+  }
+
   return (
     <>
-      {/* <Form /> */}
+      <ExpenseForm onSubmit={onSubmit} />
       <ExpenseSort onSort={(category) => setCategory(category)} />
       <ExpenseList expense={visibleExpense} onDelete={onDelete} />
     </>
