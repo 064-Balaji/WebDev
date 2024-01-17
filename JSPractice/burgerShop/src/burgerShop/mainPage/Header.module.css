@@ -1,0 +1,50 @@
+.container {
+  padding-top: 0;
+  height: 100px;
+  display: flex;
+  position: fixed;
+  width: 100%;
+}
+
+.active {
+  padding-top: 0;
+  background-color: rgba(47, 167, 214, 0.911);
+  height: 100px;
+  display: flex;
+  position: fixed;
+  width: 100%;
+}
+
+.leftSection {
+  min-width: 200px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  column-gap: 10%;
+  margin-left: 50px;
+}
+
+.logo {
+  height: 100%;
+  align-items: center;
+}
+
+.rightSection {
+  margin-right: 50px;
+  min-width: 200px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: right;
+  column-gap: 2%;
+  vertical-align: middle;
+}
+
+.p {
+  margin-bottom: 0;
+}
+
+.cart {
+  margin-left: 6%;
+}
