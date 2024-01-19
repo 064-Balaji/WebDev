@@ -111,6 +111,7 @@ const Custom = () => {
   }, [quantity]);
 
   useEffect(() => {
+    //created for manage the request from menu
     if (id.state) {
       switch (id.state.name) {
         case "Cheese Burger":
