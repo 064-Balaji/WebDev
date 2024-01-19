@@ -62,6 +62,7 @@ const Contents = () => {
           </p>
         </div>
       </div>
+      <hr />
       <div className={style.container}>
         <div className={style.leftSection}>
           <img src={juicy} className={style.sectionImg} />
@@ -69,7 +70,12 @@ const Contents = () => {
           <h6>Here is our Menu for you.</h6>
           <h6>We have prepared various menu for your taste.</h6>
           <h6>Go with the default one then customize as you want</h6>
-          <button className="btn btn-danger mt-3">Browse Menu</button>
+          <button
+            className="btn btn-danger mt-3"
+            onClick={() => navigate("/menu")}
+          >
+            Browse Menu
+          </button>
         </div>
         <div className={style.rightSection}>
           <img src={defaul} className={style.sectionImg} />
@@ -81,7 +87,7 @@ const Contents = () => {
           <h6> So, Why Delay!! Go and Customize Your own Burgers!!</h6>
           <button
             className="btn btn-danger mt-3"
-            onClick={() => navigate("/menu")}
+            onClick={() => navigate("/custom")}
           >
             Create your Own
           </button>

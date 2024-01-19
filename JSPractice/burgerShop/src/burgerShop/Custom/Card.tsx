@@ -1,14 +1,15 @@
 import style from "./Card.module.css";
 
 interface Props {
+  id: string;
   image: string;
   name: string;
   price: number;
   quantity?: number;
-  // btnPress: (opr: string) => void;
+  btnPress: (id: string, opr: string) => void;
 }
 
-const Card = ({ image, name, price, quantity }: Props) => {
+const Card = ({ id, image, name, price, quantity, btnPress }: Props) => {
   return (
     <div className={style.container}>
       <img src={image} className={style.img} />
@@ -16,11 +17,14 @@ const Card = ({ image, name, price, quantity }: Props) => {
         {name} - Rs.{price}/-
       </p>
       <div className={style.control}>
-        <button className="btn btn-danger" onClick={(e) => console.log(e)}>
+        <button className="btn btn-danger" onClick={(e) => btnPress(id, "dec")}>
           -
         </button>
-        <label>{quantity}</label>
-        <button className="btn btn-primary" onClick={(e) => console.log(e)}>
+        <label className="fs-5">{quantity}</label>
+        <button
+          className="btn btn-primary"
+          onClick={(e) => btnPress(id, "inc")}
+        >
           +
         </button>
       </div>
