@@ -111,76 +111,78 @@ const Custom = () => {
   }, [quantity]);
 
   useEffect(() => {
-    switch (id.state.name) {
-      case "Cheese Burger":
-        setQuantity({
-          ...quantity,
-          sesame: 1,
-          tomato: 1,
-          cabbage: 1,
-          onions: 1,
-          cucumber: 1,
-          cheddar: 1,
-          mayo: 1,
-        });
-        break;
+    if (id.state) {
+      switch (id.state.name) {
+        case "Cheese Burger":
+          setQuantity({
+            ...quantity,
+            sesame: 1,
+            tomato: 1,
+            cabbage: 1,
+            onions: 1,
+            cucumber: 1,
+            cheddar: 1,
+            mayo: 1,
+          });
+          break;
 
-      case "Veggie Burger":
-        setQuantity({
-          ...quantity,
-          plain: 1,
-          spinach: 1,
-          tomato: 1,
-          cabbage: 1,
-          onions: 1,
-          jalepeno: 1,
-          leafLettuce: 1,
-          cucumber: 1,
-          parmesan: 1,
-          mayo: 1,
-        });
-        break;
+        case "Veggie Burger":
+          setQuantity({
+            ...quantity,
+            plain: 1,
+            spinach: 1,
+            tomato: 1,
+            cabbage: 1,
+            onions: 1,
+            jalepeno: 1,
+            leafLettuce: 1,
+            cucumber: 1,
+            parmesan: 1,
+            mayo: 1,
+          });
+          break;
 
-      case "Beef Burger":
-        setQuantity({
-          ...quantity,
-          sesame: 1,
-          tomato: 1,
-          onions: 1,
-          leafLettuce: 1,
-          beef: 1,
-          cheddar: 1,
-          mayo: 1,
-        });
-        break;
+        case "Beef Burger":
+          setQuantity({
+            ...quantity,
+            sesame: 1,
+            tomato: 1,
+            onions: 1,
+            leafLettuce: 1,
+            beef: 1,
+            cheddar: 1,
+            mayo: 1,
+          });
+          break;
 
-      case "Chicken Burger":
-        setQuantity({
-          ...quantity,
-          sesame: 1,
-          tomato: 1,
-          cabbage: 1,
-          leafLettuce: 1,
-          chicken: 1,
-          mozarella: 1,
-          cheddar: 1,
-          mayo: 1,
-        });
-        break;
+        case "Chicken Burger":
+          setQuantity({
+            ...quantity,
+            sesame: 1,
+            tomato: 1,
+            cabbage: 1,
+            leafLettuce: 1,
+            chicken: 1,
+            mozarella: 1,
+            cheddar: 1,
+            mayo: 1,
+          });
+          break;
 
-      case "Mushroom Burger":
-        setQuantity({
-          ...quantity,
-          sesame: 1,
-          tomato: 1,
-          cabbage: 1,
-          onions: 1,
-          leafLettuce: 1,
-          mushroom: 1,
-          cheddar: 1,
-          mayo: 1,
-        });
-        break;
+        case "Mushroom Burger":
+          setQuantity({
+            ...quantity,
+            sesame: 1,
+            tomato: 1,
+            cabbage: 1,
+            onions: 1,
+            leafLettuce: 1,
+            mushroom: 1,
+            cheddar: 1,
+            mayo: 1,
+          });
+          break;
+      }
     }
   }, []);
   return (

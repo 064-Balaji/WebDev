@@ -17,14 +17,11 @@ const Card = ({ id, image, name, price, quantity, btnPress }: Props) => {
         {name} - Rs.{price}/-
       </p>
       <div className={style.control}>
-        <button className="btn btn-danger" onClick={(e) => btnPress(id, "dec")}>
+        <button className="btn btn-danger" onClick={() => btnPress(id, "dec")}>
           -
         </button>
         <label className="fs-5">{quantity}</label>
-        <button
-          className="btn btn-primary"
-          onClick={(e) => btnPress(id, "inc")}
-        >
+        <button className="btn btn-primary" onClick={() => btnPress(id, "inc")}>
           +
         </button>
       </div>
