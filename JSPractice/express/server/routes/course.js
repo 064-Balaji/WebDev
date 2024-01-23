@@ -7,15 +7,14 @@ const {
   deleteCourse,
   updateCourse,
 } = require("../controllers/courseController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.get("/", getCourses);
+router.route("/").get(protect, getCourses).post(protect, createCourse);
 
-router.get("/:id", getCourse);
-
-router.post("/", createCourse);
-
-router.delete("/:id", deleteCourse);
-
-router.put("/:id", updateCourse);
+router
+  .route("/:id")
+  .get(protect, getCourse)
+  .delete(protect, deleteCourse)
+  .put(protect, updateCourse);
 
 module.exports = router;

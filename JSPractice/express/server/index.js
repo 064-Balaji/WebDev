@@ -10,6 +10,7 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/course", require("./routes/course"));
+app.use("/user", require("./routes/user"));
 
 app.use(errorHandler);
 

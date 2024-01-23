@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler");
 const Course = require("../model/courseModel");
 
 const getCourses = asyncHandler(async (req, res) => {
-  const course = await Course.find();
+  const course = await Course.find({ user: req.user.id });
 
   if (!course) {
     res.status(400);
@@ -13,15 +13,16 @@ const getCourses = asyncHandler(async (req, res) => {
 });
 
 const getCourse = asyncHandler(async (req, res) => {
-  const course = await Course.findById(req.params.id);
-  res.json(`${course} is found.`);
+  const { text } = await Course.findById(req.params.id);
+  res.json(`Course Name:${text} is found.`);
 });
 
 const createCourse = asyncHandler(async (req, res) => {
-  const course = await Course.create({
+  const { _id, user, text } = await Course.create({
+    user: req.user.id,
     text: req.body.text,
   });
-  res.json(`${course} was sucessfully created`);
+  res.json(`${(_id, user, text)} was sucessfully created`);
 });
 
 const deleteCourse = asyncHandler(async (req, res) => {
